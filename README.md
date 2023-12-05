@@ -1,1 +1,1 @@
-Circuitpython driver for MAX6675 therocouple
+Circuitpython driver for MAX6675 thermocouple
