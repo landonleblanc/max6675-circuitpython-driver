@@ -29,13 +29,13 @@ class MAX6675:
         self._cs.value = True
         self._last_measurement_start = time.monotonic()
 
-    def ready(self):
+    def ready(self) -> bool:
         return time.monotonic() - self._last_measurement_start > self.MEASUREMENT_PERIOD_S
 
-    def error(self):
+    def error(self) -> int:
         return self._error
 
-    def read(self):
+    def read(self) -> float:
         if self.ready():
             self._cs.value = False
             time.sleep(0.00001)
